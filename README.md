@@ -13,6 +13,8 @@ Practice for App Academy with Regex and MD files
 \###### Heading 6
 
 
+Single line breaks are ignored and double make a new paragraph; you can also force a line break with two spaces before the line break, but its not recommended since you have various better alternative styling technices and the spaces are hard to see when creating the format.
+
 **bold text**
 
 \**bold text**
@@ -57,9 +59,18 @@ def hello_world():
 
 \ - [ ] Incomplete task
 
+---
+\---
+
+section divide
+
+:tada:
+🥇
+emojis can be added directly
+
 ![Chrome Logo](https://pluspng.com/img-png/google-chrome-logo-vector-png-google-chrome-logo-vector-with-speedpaint-by-windytheplaneh-4444.png)
 
-\![alt text](image url or asset name)
+\![alt text](image url or an image or gif asset name)
 
 | Column 1 | Column 2 |
 | - | - |
