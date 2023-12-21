@@ -1,20 +1,35 @@
-Sure, I'll expand the Markdown file to include the other important regex concepts we've discussed previously. This will make the guide more comprehensive.
-
----
-
 # Comprehensive Guide to Regular Expressions (Regex)
 
 Regular Expressions (Regex) are powerful tools for processing and manipulating text. This guide covers various aspects of regex including syntax, patterns, flags, and advanced features.
 
+---
+
 ## Table of Contents
 
-1. [Basic Syntax](#basic-syntax)
-2. [Common Patterns](#common-patterns)
-3. [Flags / Modifiers](#flags--modifiers)
-4. [Advanced Features](#advanced-features)
-5. [Useful Resources](#useful-resources)
+1. Literals and Metacharacters
+2. Character Sets
+      1.   Predefined Char Sets
+      2.   Custom Char Sets
+      3.   Negated Char Sets
+3. Advanced Features
+      1.   Lookarounds
+      2.   Backreferences
+      3.   Special Groups
+            1.   Non-Capturing Groups
+            2.   Named Groups
+            3.   Atomic Groups
+            4.   Branch Reset Groups
+      5.   Conditional Expressions
+      6.   Greedy, Lazy, and Possessive Quantifiers
+      7.   Inline Modifiers and Flags
+            1.   Flags
+            2.   Inline Modifiers
+   7.   Subroutine Calls and Recursion
+4. Useful Resources
 
-## Basic Syntax
+---
+
+## Literals and Metacharacters
 
 Regex patterns are a combination of characters and special symbols that define search criteria.
 
@@ -29,90 +44,128 @@ Regex patterns are a combination of characters and special symbols that define s
    | `*`           | Matches 0 or more             |
    | `+`           | Matches 1 or more             |
    | `?`           | Makes the preceding optional  |
+   | `-`           | Denotes within a range [a-z]  |
+   | `\`           | Used to escape meta characters |
+   | `()`          | Used for grouping             |
+   | `[]`          | Used for custom character sets |
+   | `{}`          | Used as specific quantifiers  |
 
-- **Character Classes**: `[abc]` matches any character a, b, or c.
+---
 
-## Common Patterns
+## Character Sets
 
-- **Digits**: `\d` matches any digit, equivalent to `[0-9]`.
-- **Word Characters**: `\w` matches any word character (letters, digits, and underscores).
-- **Whitespace**: `\s` matches any whitespace character (spaces, tabs, line breaks).
+### Predefined Character Sets
 
-## Flags / Modifiers
+| Predefined Character Sets   | Description                                                               |
+|-----------------------------|---------------------------------------------------------------------------|
+| `\d`                        | Matches any digit (equivalent to `[0-9]`).                                |
+| `\w`                        | Matches any word character (includes letters, digits, and underscores; equivalent to `[a-zA-Z0-9_]`). |
+| `\s`                        | Matches any whitespace character (includes spaces, tabs, and line breaks).|
+| `\b`                        | Matches a word boundary (the position between a word character and a non-word character).|
+| `\n`                        | Matches a newline character.                                              |
+| `\t`                        | Matches a tab character.                                                  |
+| `\r`                        | Matches a carriage return.                                                |
+| `\f`                        | Matches a form feed.                                                      |
+| `\v`                        | Matches a vertical tab.                                                   |
+| `\0`                        | Matches a NULL character.                                                 |
+| `\xhh`                      | Matches the character with the hexadecimal value `hh`.                    |
+| `\uhhhh`                    | Matches a Unicode character with the hexadecimal value `hhhh`.            |
 
-- **`i` (Case Insensitive)**: Matches letters in any case.
-- **`g` (Global Search)**: Finds all matches.
-- **`m` (Multiline Mode)**: `^` and `$` match start/end of lines.
-- **`s` (Dotall Mode)**: Dot `.` matches newline characters.
-- **`x` (Free-Spacing)**: Whitespace in the pattern (except in a character class) is ignored, and comments are allowed.
+Any uppercase predefined character set matches the negate of its lowercase. For instance, \D matches any character that is not \d.
+
+### Custom Character Sets
+
+- **Syntax**: `[ ]`
+- **Description**: Custom character sets are created using square brackets. They match any one of the characters included within the brackets.
+- **Examples**: `[abc]` matches `a`, `b`, or `c`; and you can specify ranges like `[a-z]` for any lowercase letter and `[0-9]` for any digit.
+
+### Negated Character Sets
+
+- **Syntax**: `[^ ]`
+- **Description**: Negated character sets are created by placing a caret `^` at the beginning of the set within square brackets. They match any single character that is _not_ included in the set.
+- **Examples**: `[^abc]` matches any single character that is not `a`, `b`, or `c`.
+
+---
 
 ## Advanced Features
 
-1. **Lookarounds**:
-
+### Lookarounds
    - **Positive Lookahead**: `X(?=Y)` matches `X` if followed by `Y`.
    - **Negative Lookahead**: `X(?!Y)` matches `X` if not followed by `Y`.
    - **Positive Lookbehind**: `(?<=Y)X` matches `X` if preceded by `Y`.
    - **Negative Lookbehind**: `(?<!Y)X` matches `X` if not preceded by `Y`.
 
-2. **Backreferences**:
-   - **Usage**: Refers to the text matched by a previous capturing group.
-   - **Syntax**: `\1`, `\2`, ..., `\n` (where `n` is the group number).
-   - **Example**: `(abc)\1` matches `abcabc`.
+### Backreferences
+   - **Function**: Refers to the text matched by a previous capturing group.
+   - **Syntax**: `\1`, `\2`, ..., `\n` (where `n` is the group number, being the placement of the group's first parenthesis).
+   - **Example**: `(\w+)\1` can match `abcabc` or `xyzxyz`, since `\1` is whatever `(\w+)` matches;
+   - **Placement**: Given `((a)(b))`, `\1` refers to `((a)(b))`, `\2` refers to `(a)`, and `\3` refers to `(b)`.
 
-3. **Non-Capturing Groups**: `(?:...)` groups part of a regex without capturing.
+### Special Groups
 
-4. **Named Groups**: `(?<name>...)` captures a group and assigns it a name.
+1.   **Non-Capturing Groups**
+      - **Function**: Groups part of a regex pattern without capturing it.
+      - **Syntax**: `(?:pattern)`.
+      - **Example**: `(?:foo)bar`.
 
-5. **Atomic Groups**:
+2.   **Named Groups**
+      - **Function**: Captures a group and assigns it a name for easy reference.
+      - **Syntax**: `(?<name>pattern)` or `(?'name'pattern)`.
+      - **Example**: `(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})`.
 
-   - **Syntax**: `(?>...)`.
-   - **Function**: Prevents the regex engine from backtracking within the group.
-   - **Example**: `a(?>bc|b)c` will not match `abcc`.
+3.   **Atomic Groups**:
+      - **Function**: Prevents the regex engine from backtracking within the group.
+      - **Syntax**: `(?>...)`.
+      - **Example**: `a(?>b|bc)d` will not match `abcd`, since if it matches the first option, `b`, it continues, without considering `bc`.
 
-6. **Branch Reset Groups**:
+4.   **Branch Reset Groups**:
+      - **Function**: Allows capturing groups in different alternatives to have the same number.
+      - **Syntax**: `(?|pattern1|pattern2)`.
+      - **Example**: `(?|(abc)|(def))` both `abc` and `def` are in Group 1.
 
-   - **Syntax**: `(?|...)`.
-   - **Function**: Alternatives share the same group numbers.
-   - **Example**: `(?|(abc)|(def))` both `abc` and `def` are in Group 1.
-
-7. **Conditional Expressions**:
-
-   - **Syntax**: `(?(condition)true-regex|false-regex)`.
+### Conditional Expressions
    - **Function**: Matches `true-regex` if `condition` is met; otherwise `false-regex`.
+   - **Syntax**: `(?(condition)true-regex|false-regex)`.
 
-8. **Greedy vs. Lazy vs. Possessive Quantifiers**:
-
+### Greedy, Lazy, and Possessive Quantifiers
    - **Greedy**: `*`, `+`, `?` (matches as much as possible)
    - **Lazy**: `*?`, `+?`, `??` (matches as little as possible)
    - **Possessive**: `*+`, `++`, `?+` (like greedy, but without backtracking)
 
-9. **Inline Modifiers**:
+**Possessive Example**: Given `\d++[a-zA-Z]` with string `12345abc`, it matches `12345a`. The `\d++` consumes all digits `12345`, and `[a-zA-Z]` matches the `a`.
 
-   - **Function**: Change the behavior of part of the regex.
+### Inline Modifiers and Flags
+
+#### Flags
+   - **Function**: Change the behavior of the whole regex.
+   - **Syntax**: Using the global flag `g` is done by `/regex/g`.
+
+#### Inline Modifiers
+   - **Function**: Change the behavior of only part of the regex.
    - **Syntax**: `(?flags)` for setting, `(?-flags)` for unsetting. 
-   - **Example**: `(?i)case insensitive(?-i)case sensitive`.
+   - **Example**: `(?i)case insensitive regex(?-i)case sensitive regex`.
 
-10. **Subroutine Calls and Recursion**:
+| Inline Modifier           | Syntax   | Description                                                        | Example                |
+|---------------------------|----------|--------------------------------------------------------------------|------------------------|
+| Case Insensitivity        | `(?i)`   | Makes the regex pattern case-insensitive.                          | `(?i)abc` matches 'abc', 'Abc', 'aBc', etc. |
+| Multiline Mode            | `(?m)`   | `^` and `$` match the start and end of each line, not just the string. | `(?m)^abc` matches 'abc' at the beginning of any line. |
+| Dotall Mode (Single Line) | `(?s)`   | Dot `.` matches newline characters as well.                        | `(?s).+` matches across multiple lines. |
+| Free-Spacing and Comments | `(?x)`   | Ignores whitespace in the pattern. Allows comments.                | `(?x) foo \d+ # Matches 'foo' and digits` |
+| Ungreedy (Lazy) Mode      | `(?U)`   | Inverts the greediness of quantifiers: quantifiers are lazy by default. | `(?U)a+?b` matches 'ab', 'aab', 'aaab', etc. |
+| Combining Modifiers       |          | Multiple modifiers can be combined within the same group.          | `(?im)abc` applies both case-insensitive and multiline modes to `abc`. |
 
-    - **Subroutine Calls**: Define a group and call it elsewhere in the regex.
-    - **Syntax**: `(?(DEFINE)(?<name>pattern))` and `(?&name)`.
-    - **Recursion**: For matching nested structures.
-    - **Syntax**: `(?R)` for the entire pattern; `(?1)`, `(?2)`, etc., for specific groups.
+Not all flags can be used as inline modifiers, and not all inline modifiers can be used as flags.
 
-11. **Comments in Regex**:
+### Subroutine Calls and Recursion
+   - **Function**: Define a group and call it elsewhere in the regex.
+   - **Syntax**: `(?(DEFINE)(?<name>pattern))` and `(?&name)`.
+   - **Recursion**: For matching nested structures.
+   - **Syntax**: `(?R)` for the entire pattern; `(?1)`, `(?2)`, etc., for specific groups.
 
-    - **In Free-Spacing Mode (`x`)**: Whitespace is ignored, allowing for comments.
-    - **Syntax**: `#` for comments.
-    - **Example**: `(?x) \d{3} # Match 3 digits`.
-
+---
 
 ## Useful Resources
 
 - [Regex101](https://regex101.com/): Test and debug regex patterns.
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions): JavaScript regex reference.
 - [Regular-Expressions.info](https://www.regular-expressions.info/): Comprehensive regex tutorial and reference.
-
----
-
-This Markdown document now encompasses a wide range of regex topics, including basic syntax, common patterns, modifiers, and several advanced features like lookaheads, lookbehinds, and recursion. This expanded guide serves as a detailed reference for regex usage and functionalities.
