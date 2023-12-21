@@ -1,83 +1,175 @@
-# aa-regex-and-md
-Practice for App Academy with Regex and MD files
+# A Comprehensive Guide to Markdown Files
 
-# Heading 1
-\# Heading 1
+## Table of Contents
 
-## Heading 2
-\## Heading 2
+1. Headers
+2. Whitespaces
+3. Text Styling
+   1. Bold Text
+   2. Italic Text
+   3. Strikethrough Text
+4. Lists
+   1. Ordered Lists
+   2. Unordered Lists
+   3. Checklists
+5. Special Text
+   1. Blockquotes
+   2. Inline Code Snippets
+   3. Multi-line Code Samples
+   4. Embeding Backtick Strings
+6. Tables
+7. Section Dividers
+8. Emojis
+9. Images
+
+---
+
+## Headings
+
+# Heading 1  
+**Syntax**: `# Heading 1`.
+
+## Heading 2  
+**Syntax**: `## Heading 2`.
 
 ... up to
 
-###### Heading 6
-\###### Heading 6
+###### Heading 6  
+**Syntax**: `###### Heading 6`
+
+Headings 1 and 2 have thin section divdes while 3 through 6 don't.
 
 
-Single line breaks are ignored and double make a new paragraph; you can also force a line break with two spaces before the line break, but its not recommended since you have various better alternative styling technices and the spaces are hard to see when creating the format.
+## Whitespaces  
+Single line breaks are ignored and double make a new paragraph; you can also force a single line break with two spaces before the line break, but its not recommended since you have various better alternative styling technices and the spaces are hard to see when creating the format.
 
-**bold text**
+## Text Styling
 
-\**bold text**
+**Example**: **bold text**  
+**Syntax**: `**bold text**`
 
-*italic text*
+**Example**: *italic text*  
+**Syntax**: `*italic text*`
 
-\*italic text*
+**Example**: ~~strikethrough text~~  
+**Syntax**: `~~strikethrough text~~`
 
-~~strikethrough text~~
+## Lists
 
-\~~strikethrough text~~
+### Ordered Lists
 
-> This is a blockquote.
+**Example**:  
+1. First Item
+   1. First First Item
+      1. First First First Item
+      2. Second First First Item
+   3. Second First Item
+2. Second Item
 
-\> This is a blockquote.
+**Syntax**:  
+```
+1. First Item
+   1. First First Item
+      1. First First First Item
+      2. Second First First Item
+   3. Second First Item
+2. Second Item
+```
 
-1. First item
-2. Second item
+### Unordered Lists
 
-\ 1. First item
-
-\ 2. Second item
+**Example**:
 
 - Bullet item
 - Another bullet item
 
-\ - Bullet item
+**Syntax**:  
+`- Bullet item`  
+`- Another bullet item`
 
-\ - Another bullet item
+### Checklists
 
-```python
-def hello_world():
- print("Hello, world!")
-```
-
-\``` multi-line sample code ```
-
+**Example**: Checklist  
 - [x] Completed task
 - [ ] Incomplete task
 
-\ - [x] Completed task
+**Syntax1**: `- [x] Completed task`.  
+**Syntax2**: `- [ ] Incomplete task`.
 
-\ - [ ] Incomplete task
+## Special Text
 
----
-\---
+### Blockquotes
 
-section divide
+**Example**:  
+> This is a blockquote.
 
-:tada:
-🥇
-emojis can be added directly
+**Syntax**: > This is a blockquote.
 
-![Chrome Logo](https://pluspng.com/img-png/google-chrome-logo-vector-png-google-chrome-logo-vector-with-speedpaint-by-windytheplaneh-4444.png)
+### Inline Code Snippets
 
-\![alt text](image url or an image or gif asset name)
+**Example**: This code here, `sample code`, is perfect.  
+**Syntax**: You must use atleast 1 backtick to indicate an inline text block, `` `sample code` ``.
+
+### Multi-line Code Samples
+
+**Example**:  
+```
+# python code
+def hello_world():
+ print("Hello, world!")
+```  
+**Syntax**: You must use atleast 3 backticks to indicate a multi-line text block.
+````
+```
+multi-line
+code sample
+demo here
+```
+````
+
+### Embeding Backtick Stings
+
+You can embed backtick strings inside eachother, but you must use a greater number of backticks for the outer block than for the inner block.
+
+````
+```
+``
+`
+multi-line
+code sample
+demo here
+`
+``
+```
+````
+
+## Tables
 
 | Column 1 | Column 2 |
 | - | - |
 | Data 1 | Data 2 |
+| Data 3 | Data 4 |
 
-\| Column 1 | Column 2 |
-
-\| - | - |
-
+\| Column 1 | Column 2 |  
+\| - | - |  
 \| Data 1 | Data 2 |
+
+
+## Section Dividers
+
+The line below is a section divide.
+
+---
+
+**Syntax**: `---`.
+
+## Emojis
+
+:tada:
+Emojis can be added by copy and pasting, or by using a colon code.  
+**Syntax**: `:tada:`.
+
+## Images
+
+**Example**: ![image](https://github.com/TheCyberLocal/styled-coding-notes/assets/93614894/9d6cc948-caef-4b9d-83d4-a98fbd7f3bc2)
+**Syntax**: `![alt text](image url or an image or gif asset name)`.
