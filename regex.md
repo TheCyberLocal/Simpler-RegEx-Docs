@@ -140,6 +140,15 @@ Any uppercase predefined character set matches the negate of its lowercase. For 
    - **Function**: Change the behavior of the whole regex.
    - **Syntax**: Using the global flag `g` is done by `/regex/g`.
 
+| Flag                | Syntax | Description                                                    | Example             |
+|---------------------|--------|----------------------------------------------------------------|---------------------|
+| Case Insensitive    | `i`    | Matches letters in any case.                                   | `/abc/i` matches "AbC", "ABC", "abc", etc. |
+| Global Search       | `g`    | Finds all matches.                                             | `/abc/g` finds all occurrences of "abc" in the string. |
+| Multiline Mode      | `m`    | `^` and `$` match the start and end of each line, not just the start and end of the string. | `/^abc/m` matches "abc" at the start of any line. |
+| Dotall Mode         | `s`    | Dot `.` matches newline characters.                            | `/a.c/s` matches "abc" and "a\nc". |
+| Free-Spacing        | `x`    | Whitespace in the pattern (except in a character class) is ignored, and comments are allowed. | `/(?x) a b c # comment/` matches "abc". |
+
+
 #### Inline Modifiers
    - **Function**: Change the behavior of only part of the regex.
    - **Syntax**: `(?flags)` for setting, `(?-flags)` for unsetting. 
@@ -154,7 +163,7 @@ Any uppercase predefined character set matches the negate of its lowercase. For 
 | Ungreedy (Lazy) Mode      | `(?U)`   | Inverts the greediness of quantifiers: quantifiers are lazy by default. | `(?U)a+?b` matches 'ab', 'aab', 'aaab', etc. |
 | Combining Modifiers       |          | Multiple modifiers can be combined within the same group.          | `(?im)abc` applies both case-insensitive and multiline modes to `abc`. |
 
-Not all flags can be used as inline modifiers, and not all inline modifiers can be used as flags.
+**Notice**: Not all flags can be used as inline modifiers, and not all inline modifiers can be used as flags.
 
 ### Subroutine Calls and Recursion
    - **Function**: Define a group and call it elsewhere in the regex.
