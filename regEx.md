@@ -1,4 +1,4 @@
-# Comprehensive Guide to Regular Expressions (Regex)
+# A Comprehensive Guide to Regular Expressions (Regex)
 
 Regular Expressions (Regex) are powerful tools for processing and manipulating text. This guide covers various aspects of regex including syntax, patterns, flags, and advanced features.
 
