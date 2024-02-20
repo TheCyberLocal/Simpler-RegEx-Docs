@@ -112,18 +112,43 @@ Single line breaks are ignored and double make a new paragraph; you can also for
 
 ### Multi-line Code Samples
 
-**Example**:  
-```
-# python code
-def hello_world():
- print("Hello, world!")
-```  
 **Syntax**: You must use atleast 3 backticks to indicate a multi-line text block.
 ````
 ```
 multi-line
 code sample
 demo here
+```
+````
+
+You can also specify the language of your code for colored styling at the beginning of your code snippet directly after the opening backticks.
+
+**Examples**:  
+```py
+# python code
+def hello_world():
+ print("Hello, world!")
+```
+```js
+// JavaScript code
+function helloWorld() {
+   console.log("Hello, world!");
+}
+```
+**Syntax**:
+````
+```py
+# python code
+def hello_world():
+ print("Hello, world!")
+```
+````
+````
+```js
+// JavaScript code
+function helloWorld() {
+   console.log("Hello, world!");
+}
 ```
 ````
 
