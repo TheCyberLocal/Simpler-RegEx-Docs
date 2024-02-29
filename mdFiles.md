@@ -20,7 +20,7 @@
 6. Tables
 7. Section Dividers
 8. Emojis
-9. Images
+9. Images and Gifs
 
 ---
 
@@ -194,7 +194,7 @@ The line below is a section divide.
 Emojis can be added by copy and pasting, or by using a colon code.  
 **Syntax**: `:tada:`.
 
-## Images
+## Images and Gifs
 
 **Example**: ![image](https://github.com/TheCyberLocal/styled-coding-notes/assets/93614894/9d6cc948-caef-4b9d-83d4-a98fbd7f3bc2)
 **Syntax**: `![alt text](image url or an image or gif asset name)`.
