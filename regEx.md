@@ -98,7 +98,7 @@ Any uppercase predefined character set matches the negate of its lowercase. For 
 ### Backreferences
    - **Function**: Refers to the text matched by a previous capturing group.
    - **Syntax**: `\1`, `\2`, ..., `\n` (where `n` is the group number, being the placement of the group's first parenthesis).
-   - **Example**: `(\w+)\1` can match `abcabc` or `xyzxyz`, since `\1` is whatever `(\w+)` matches;
+   - **Example**: `(\w+)\1` can match `abcabc` or `0101`, since `\1` is whatever `(\w+)` matches.
    - **Placement**: Given `((a)(b))`, `\1` refers to `((a)(b))`, `\2` refers to `(a)`, and `\3` refers to `(b)`.
 
 ### Special Groups
