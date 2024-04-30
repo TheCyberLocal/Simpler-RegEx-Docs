@@ -13,18 +13,18 @@ Regular Expressions (Regex) are powerful tools for processing and manipulating t
       3.   Negated Char Sets
 3. Advanced Features
       1.   Lookarounds
-      2.   Backreferences
-      3.   Special Groups
+      2.   Special Groups
             1.   Non-Capturing Groups
             2.   Named Groups
             3.   Atomic Groups
             4.   Branch Reset Groups
-      5.   Conditional Expressions
-      6.   Greedy, Lazy, and Possessive Quantifiers
-      7.   Inline Modifiers and Flags
+      3.   Backreferences
+      4.   Conditional Expressions
+      5.   Greedy, Lazy, and Possessive Quantifiers
+      6.   Inline Modifiers and Flags
             1.   Flags
             2.   Inline Modifiers
-   7.   Subroutine Calls and Recursion
+      7.   Subroutine Calls and Recursion
 4. Useful Resources
 
 ---
@@ -95,12 +95,6 @@ Any uppercase predefined character set matches the negate of its lowercase. For 
    - **Positive Lookbehind**: `(?<=Y)X` matches `X` if preceded by `Y`.
    - **Negative Lookbehind**: `(?<!Y)X` matches `X` if not preceded by `Y`.
 
-### Backreferences
-   - **Function**: Refers to the text matched by a previous capturing group.
-   - **Syntax**: `\1`, `\2`, ..., `\n` (where `n` is the group number, being the placement of the group's first parenthesis).
-   - **Example**: `(\w+)\1` can match `abcabc` or `0101`, since `\1` is whatever `(\w+)` matches.
-   - **Placement**: Given `((a)(b))`, `\1` refers to `((a)(b))`, `\2` refers to `(a)`, and `\3` refers to `(b)`.
-
 ### Special Groups
 
 1.   **Non-Capturing Groups**
@@ -122,6 +116,13 @@ Any uppercase predefined character set matches the negate of its lowercase. For 
       - **Function**: Allows capturing groups in different alternatives to have the same number.
       - **Syntax**: `(?|pattern1|pattern2)`.
       - **Example**: `(?|(abc)|(def))` both `abc` and `def` are in Group 1.
+
+### Backreferences
+   - **Function**: Refers to the text matched by a previous capturing group.
+   - **Syntax**: `\1`, `\2`, ..., `\n` (where `n` is the group number, being the placement of the group's first parenthesis). You can also backreference named capture groups with `\k<name>`.
+   - **Example1**: `(\w+)\1` can match `abcabc` or `0101`, since `\1` is whatever `(\w+)` matches.
+   - **Example2**: `(?<word>\w+)\k<word>` can match `abcabc` or `0101`, since `k<word>` is whatever `(?<word>\w+)` matches.
+   - **Placement**: Given `((a)(b))`, `\1` refers to `((a)(b))`, `\2` refers to `(a)`, and `\3` refers to `(b)`.
 
 ### Conditional Expressions
    - **Function**: Matches `true-regex` if `condition` is met; otherwise `false-regex`.
