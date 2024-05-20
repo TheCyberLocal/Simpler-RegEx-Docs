@@ -45,13 +45,13 @@ Single line breaks are ignored and double make a new paragraph; you can also for
 
 ## Text Styling
 
-**Example**: **bold text**  
-**Syntax**: `**bold text**`
+**Example**: **bold text** 
+**Syntax**: `**bold text**` or `__bold text__`
 
-**Example**: *italic text*  
-**Syntax**: `*italic text*`
+**Example**: *italic text* 
+**Syntax**: `*italic text*` or `_bold text_`
 
-**Example**: ~~strikethrough text~~  
+**Example**: ~~strikethrough text~~
 **Syntax**: `~~strikethrough text~~`
 
 ## Lists
