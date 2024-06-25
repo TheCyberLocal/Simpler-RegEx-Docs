@@ -21,7 +21,7 @@
 7. Section Dividers
 8. Emojis
 9. Links
-10. Images and Gifs
+10. Images and Gifs with hover
 
 ---
 
@@ -200,8 +200,10 @@ Emojis can be added by copy and pasting, or by using a colon code.
 
 **Syntax**: `[My LinkedIn Link](https://www.linkedin.com/in/tzm01/)`
 
-## Images and Gifs
+## Images and Gifs with hover
 
-**Example**: ![image](https://github.com/TheCyberLocal/styled-coding-notes/assets/93614894/9d6cc948-caef-4b9d-83d4-a98fbd7f3bc2)
+**Example**: ![image](https://www.buildthatwebsite.com/wp-content/uploads/2022/06/Wordpress-Button-Hover-Effects.png "I can hover!")
 
-**Syntax**: `![alt text](image url or an image or gif asset name)`.
+**Syntax**: `![alt text](image_or_gif_url_or_asset_name "Hover text")`.
+
+Note: The alt text and hover text are entirely optional. `![](image_url_or_an_image_or_gif_asset_name)`
