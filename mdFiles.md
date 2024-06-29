@@ -2,64 +2,96 @@
 
 ## Table of Contents
 
-1. Headers
-2. Whitespaces
-3. Text Styling
-   1. Bold Text
-   2. Italic Text
-   3. Strikethrough Text
-4. Lists
-   1. Ordered Lists
-   2. Unordered Lists
-   3. Checklists
-5. Special Text
-   1. Blockquotes
-   2. Inline Code Snippets
-   3. Multi-line Code Samples
-   4. Embeding Backtick Strings
-6. Tables
-7. Section Dividers
-8. Emojis
-9. Links
-10. Images and Gifs with hover
+1. [Headers](#headers)
+2. [Anchors](#anchors)
+3. [Whitespaces](#whitespaces)
+4. [Text Styling](#text-styling)
+   1. [Bold Text](#bold-text)
+   2. [Italic Text](#italic-text)
+   3. [Strikethrough Text](#strikethrough-text)
+5. [Lists](#lists)
+   1. [Ordered Lists](#ordered-lists)
+   2. [Unordered Lists](#unordered-lists)
+   3. [Checklists](#checklists)
+6. [Special Text](#special-text)
+   1. [Blockquotes](#blockquotes)
+   2. [Inline Code Snippets](#inline-code-snippets)
+   3. [Multi-line Code Samples](#multi-line-code-samples)
+   4. [Embedding Backtick Strings](#embedding-backtick-strings)
+7. [Tables](#tables)
+8. [Section Dividers](#section-dividers)
+9. [Emojis](#emojis)
+10. [Links](#links)
+11. [Images and Gifs with Hover](#images-and-gifs-with-hover)
+12. [Linked Images](#linked-images)
 
 ---
 
-## Headings
+## Headers
 
-# Heading 1  
+[⇧ Back to Table of Contents](#table-of-contents)
+
+# Heading 1
 **Syntax**: `# Heading 1`.
 
-## Heading 2  
+## Heading 2
 **Syntax**: `## Heading 2`.
 
-... up to
+### Heading 3
+**Syntax**: `### Heading 3`.
 
-###### Heading 6  
-**Syntax**: `###### Heading 6`
+#### Heading 4
+**Syntax**: `#### Heading 4`.
 
-Headings 1 and 2 have thin section divdes while 3 through 6 don't.
+##### Heading 5
+**Syntax**: `##### Heading 5`.
 
+###### Heading 6
+**Syntax**: `###### Heading 6`.
 
-## Whitespaces  
-Single line breaks are ignored and double make a new paragraph; you can also force a single line break with two spaces before the line break, but its not recommended since you have various better alternative styling technices and the spaces are hard to see when creating the format.
+Headings 1 and 2 have thin section dividers while 3 through 6 don't.
+
+## Anchors
+
+[⇧ Back to Table of Contents](#table-of-contents)
+
+**Example**: The link directly above that takes you back to the table of contents.
+
+**Syntax**: `[display text](#lowercase-header-with-spaces-as-hyphens)`
+
+**Note:**: This works on any level heading (1-6).
+
+---
+
+## Whitespaces
+
+[⇧ Back to Table of Contents](#table-of-contents)
+
+Single line breaks are ignored, and double line breaks make a new paragraph. You can also force a single line break with two spaces before the line break, but it's not recommended since there are better alternative styling techniques and the spaces are hard to see when creating the format.
 
 ## Text Styling
 
-**Example**: **bold text** 
+[⇧ Back to Table of Contents](#table-of-contents)
+
+### Bold Text
+**Example**: **bold text**
 **Syntax**: `**bold text**` or `__bold text__`
 
-**Example**: *italic text* 
-**Syntax**: `*italic text*` or `_bold text_`
+### Italic Text
+**Example**: *italic text*
+**Syntax**: `*italic text*` or `_italic text_`
 
+### Strikethrough Text
 **Example**: ~~strikethrough text~~
 **Syntax**: `~~strikethrough text~~`
 
 ## Lists
 
+[⇧ Back to Table of Contents](#table-of-contents)
+
 ### Ordered Lists
 
-**Example**:  
+**Example**:
 1. First Item
    1. First First Item
       1. First First First Item
@@ -67,7 +99,7 @@ Single line breaks are ignored and double make a new paragraph; you can also for
    3. Second First Item
 2. Second Item
 
-**Syntax**:  
+**Syntax**:
 ```
 1. First Item
    1. First First Item
@@ -84,36 +116,38 @@ Single line breaks are ignored and double make a new paragraph; you can also for
 - Bullet item
 - Another bullet item
 
-**Syntax**:  
-`- Bullet item`  
+**Syntax**:
+`- Bullet item`
 `- Another bullet item`
 
 ### Checklists
 
-**Example**: Checklist  
+**Example**: Checklist
 - [x] Completed task
 - [ ] Incomplete task
 
-**Syntax1**: `- [x] Completed task`.  
-**Syntax2**: `- [ ] Incomplete task`.
+**Syntax**: `- [x] Completed task name`.
+**Syntax**: `- [ ] Incomplete task name`.
 
 ## Special Text
 
+[⇧ Back to Table of Contents](#table-of-contents)
+
 ### Blockquotes
 
-**Example**:  
+**Example**:
 > This is a blockquote.
 
-**Syntax**: > This is a blockquote.
+**Syntax**: `> This is a blockquote.`
 
 ### Inline Code Snippets
 
-**Example**: This code here, `sample code`, is perfect.  
-**Syntax**: You must use atleast 1 backtick to indicate an inline text block, `` `sample code` ``.
+**Example**: This code here, `sample code`, is perfect.
+**Syntax**: You must use at least 1 backtick to indicate an inline text block, `` `sample code` ``.
 
 ### Multi-line Code Samples
 
-**Syntax**: You must use atleast 3 backticks to indicate a multi-line text block.
+**Syntax**: You must use at least 3 backticks to indicate a multi-line text block.
 ````
 ```
 multi-line
@@ -124,38 +158,41 @@ demo here
 
 You can also specify the language of your code for colored styling at the beginning of your code snippet directly after the opening backticks.
 
-**Examples**:  
+**Examples**:
 ```py
 # python code
 def hello_world():
- print("Hello, world!")
+    print("Hello, world!")
 ```
+
 ```js
 // JavaScript code
 function helloWorld() {
-   console.log("Hello, world!");
+    console.log("Hello, world!");
 }
 ```
+
 **Syntax**:
 ````
 ```py
 # python code
 def hello_world():
- print("Hello, world!")
+    print("Hello, world!")
 ```
 ````
+
 ````
 ```js
 // JavaScript code
 function helloWorld() {
-   console.log("Hello, world!");
+    console.log("Hello, world!");
 }
 ```
 ````
 
-### Embeding Backtick Stings
+### Embedding Backtick Strings
 
-You can embed backtick strings inside eachother, but you must use a greater number of backticks for the outer block than for the inner block.
+You can embed backtick strings inside each other, but you must use a greater number of backticks for the outer block than for the inner block.
 
 ````
 ```
@@ -171,19 +208,26 @@ demo here
 
 ## Tables
 
+[⇧ Back to Table of Contents](#table-of-contents)
+
+**Example**:
 | Column 1 | Column 2 |
 | - | - |
 | Data 1 | Data 2 |
 | Data 3 | Data 4 |
 
-\| Column 1 | Column 2 |  
-\| - | - |  
-\| Data 1 | Data 2 |
-
+**Syntax**:
+```
+| Column 1 | Column 2 |
+| - | - |
+| Data 1 | Data 2 |
+```
 
 ## Section Dividers
 
-The line below is a section divide.
+[⇧ Back to Table of Contents](#table-of-contents)
+
+The line below is a section divider.
 
 ---
 
@@ -191,19 +235,36 @@ The line below is a section divide.
 
 ## Emojis
 
+[⇧ Back to Table of Contents](#table-of-contents)
+
 :tada:
-Emojis can be added by copy and pasting, or by using a colon code.  
+Emojis can be added by copy and pasting, or by using a colon code.
 **Syntax**: `:tada:`.
 
-# Links
-**Example**: [My LinkedIn Link](https://www.linkedin.com/in/tzm01/)
+## Links
 
-**Syntax**: `[My LinkedIn Link](https://www.linkedin.com/in/tzm01/)`
+[⇧ Back to Table of Contents](#table-of-contents)
 
-## Images and Gifs with hover
+**Example**: [My LinkedIn Link](https://www.linkedin.com/in/tzm01/ "Here I am")
 
-**Example**: ![image](https://www.buildthatwebsite.com/wp-content/uploads/2022/06/Wordpress-Button-Hover-Effects.png "I can hover!")
+**Syntax**: `[display text](redirect link "hover text")`
 
-**Syntax**: `![alt text](image_or_gif_url_or_asset_name "Hover text")`.
+## Images and Gifs with Hover
 
-Note: The alt text and hover text are entirely optional. `![](image_url_or_an_image_or_gif_asset_name)`
+[⇧ Back to Table of Contents](#table-of-contents)
+
+**Example**: ![image](/asset.png "I can hover!")
+
+**Syntax**: `![alt text](image link "hover text")`.
+
+Note: The alt text and hover text are entirely optional. `![](image link)`
+
+## Linked Images
+
+[⇧ Back to Table of Contents](#table-of-contents)
+
+**Example**: [![image](/asset.png "I can hover!")](https://www.linkedin.com/in/tzm01/)
+
+**Syntax**: `[![alt text](image link "hover text")](url link)`
+
+**Note:** We use the image syntax in the display text section of the link syntax.
