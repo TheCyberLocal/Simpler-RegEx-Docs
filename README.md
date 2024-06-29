@@ -17,18 +17,6 @@ Simple Syntax Docs is meant to simplify the learning curve for fundamental codin
 ## 💖 Support
 If you find my content helpful or interesting, consider buying me a coffee. Every cup is greatly appreciated and fuels my work!
 
-<a href="https://buymeacoffee.com/thecyberlocal">
-<img
-    src="https://img.shields.io/badge/-buy_me_a%C2%A0coffee-gray?logo=buy-me-a-coffee"
-    style="border-radius: 5px; box-shadow: 0px 0px 8px 1px gray; margin-right: 15px">
-</a>
-<a href="https://www.paypal.com/paypalme/TheCyberLocal">
-<img
-    src="https://img.shields.io/badge/PayPal-00457C?logo=paypal&logoColor=white"
-    style="border-radius: 5px; box-shadow: 0px 0px 8px 1px #00457C; margin-right: 15px">
-</a>
-<a href="https://www.venmo.com/TheCyberLocal">
-<img
-    src="https://img.shields.io/badge/Venmo-008CFF?logo=venmo&logoColor=white"
-    style="border-radius: 5px; box-shadow: 0px 0px 8px 1px #008CFF; margin-right: 15px">
-</a>
+[![Buy Me a Coffee](https://img.shields.io/badge/-buy_me_a%C2%A0coffee-gray?logo=buy-me-a-coffee)](https://buymeacoffee.com/thecyberlocal)
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/TheCyberLocal)
+[![Venmo](https://img.shields.io/badge/Venmo-008CFF?logo=venmo&logoColor=white)](https://www.venmo.com/TheCyberLocal)
