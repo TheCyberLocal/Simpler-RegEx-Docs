@@ -1,35 +1,44 @@
-# A Comprehensive Guide to Regular Expressions (Regex)
+# A Concise Guide to Regular Expressions (Regex)
 
-Regular Expressions (Regex) are powerful tools for processing and manipulating text. This guide covers various aspects of regex including syntax, patterns, flags, and advanced features.
+Regular Expressions, or RegEx, are powerful tools used for searching, matching, and manipulating text. Essentially, a RegEx is a sequence of characters that define a search pattern. This is especially useful in tasks involving text processing, such as validating data, extracting information, or transforming text.
 
----
+Think of RegEx as a sophisticated search tool. For example, instead of manually looking for all email addresses in a document, a RegEx pattern can quickly find and highlight them. The flexibility of RegEx allows you to specify intricate patterns, making it a versatile tool for developers, data scientists, and anyone working with large amounts of text.
+
+While the syntax may appear complex at first, understanding the basics of how RegEx patterns work can significantly enhance your text-processing capabilities. By leveraging the power of RegEx, you can perform tasks that would otherwise be time-consuming and error-prone with precision and efficiency.
+
+Whether you're a beginner or an experienced user, checkout [RegExr](https://regexr.com/) for a user-friendly interface and numerous examples to help you understand and create your own patterns. This website provides an interactive environment where you can test RegEx patterns in real time, ensuring the correctness of your pattern before implementing it in your project.
+
+### [Too Much... or just want something better? Check out STRling!](https://github.com/TheCyberLocal/STRling)
+
+## [⇦ Back to Documentation Index](../README.md#documentation-index)
 
 ## Table of Contents
 
-1. Literals and Metacharacters
-2. Character Sets
-      1.   Predefined Char Sets
-      2.   Custom Char Sets
-      3.   Negated Char Sets
-3. Advanced Features
-      1.   Lookarounds
-      2.   Special Groups
-            1.   Non-Capturing Groups
-            2.   Named Groups
-            3.   Atomic Groups
-            4.   Branch Reset Groups
-      3.   Backreferences
-      4.   Conditional Expressions
-      5.   Greedy, Lazy, and Possessive Quantifiers
-      6.   Inline Modifiers and Flags
-            1.   Flags
-            2.   Inline Modifiers
-      7.   Subroutine Calls and Recursion
-4. Useful Resources
+- [Literals and Metacharacters](#literals-and-metacharacters)
+- [Character Sets](#character-sets)
+   - [Predefined Character Sets](#predefined-character-sets)
+   - [Custom Character Sets](#custom-character-sets)
+   - [Negated Character Sets](#negated-character-sets)
+- [Lookarounds](#lookarounds)
+- [Special Groups](#special-groups)
+   - [Non-Capturing Groups](#non-capturing-groups)
+   - [Named Groups](#named-groups)
+   - [Atomic Groups](#atomic-groups)
+   - [Branch Reset Groups](#branch-reset-groups)
+- [Backreferences](#backreferences)
+- [Conditional Expressions](#conditional-expressions)
+- [Greedy, Lazy, and Possessive Quantifiers](#greedy-lazy-and-possessive-quantifiers)
+- [Flags](#flags)
+- [Inline Modifiers](#inline-modifiers)
+- [Subroutine Calls](#subroutine-calls)
+- [Recursion](#recursion)
+- [Useful Resources](#useful-resources)
 
 ---
 
 ## Literals and Metacharacters
+
+[⇧ Back to Table of Contents](#table-of-contents)
 
 Regex patterns are a combination of characters and special symbols that define search criteria.
 
@@ -53,6 +62,8 @@ Regex patterns are a combination of characters and special symbols that define s
 ---
 
 ## Character Sets
+
+[⇧ Back to Table of Contents](#table-of-contents)
 
 ### Predefined Character Sets
 
@@ -87,57 +98,70 @@ Any uppercase predefined character set matches the negate of its lowercase. For 
 
 ---
 
-## Advanced Features
+## Lookarounds
 
-### Lookarounds
+[⇧ Back to Table of Contents](#table-of-contents)
+
    - **Positive Lookahead**: `X(?=Y)` matches `X` if followed by `Y`.
    - **Negative Lookahead**: `X(?!Y)` matches `X` if not followed by `Y`.
    - **Positive Lookbehind**: `(?<=Y)X` matches `X` if preceded by `Y`.
    - **Negative Lookbehind**: `(?<!Y)X` matches `X` if not preceded by `Y`.
 
-### Special Groups
+## Special Groups
 
-1.   **Non-Capturing Groups**
-      - **Function**: Groups part of a regex pattern without capturing it.
-      - **Syntax**: `(?:pattern)`.
-      - **Example**: `(?:foo)bar`.
+[⇧ Back to Table of Contents](#table-of-contents)
 
-2.   **Named Groups**
-      - **Function**: Captures a group and assigns it a name for easy reference.
-      - **Syntax**: `(?<name>pattern)` or `(?'name'pattern)`.
-      - **Example**: `(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})`.
+### Non-Capturing Groups
+   - **Function**: Groups part of a regex pattern without capturing it.
+   - **Syntax**: `(?:pattern)`.
+   - **Example**: `(?:foo)bar`.
 
-3.   **Atomic Groups**:
-      - **Function**: Prevents the regex engine from backtracking within the group.
-      - **Syntax**: `(?>...)`.
-      - **Example**: `a(?>b|bc)d` will not match `abcd`, since if it matches the first option, `b`, it continues, without considering `bc`.
+### Named Groups
+   - **Function**: Captures a group and assigns it a name for easy reference.
+   - **Syntax**: `(?<name>pattern)` or `(?'name'pattern)`.
+   - **Example**: `(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})`.
 
-4.   **Branch Reset Groups**:
-      - **Function**: Allows capturing groups in different alternatives to have the same number.
-      - **Syntax**: `(?|pattern1|pattern2)`.
-      - **Example**: `(?|(abc)|(def))` both `abc` and `def` are in Group 1.
+### Atomic Groups
+   - **Function**: Prevents the regex engine from backtracking within the group.
+   - **Syntax**: `(?>...)`.
+   - **Example**: `a(?>b|bc)d` will not match `abcd`, since if it matches the first option, `b`, it continues, without considering `bc`.
 
-### Backreferences
+### Branch Reset Groups
+   - **Function**: Allows capturing groups in different alternatives to have the same number.
+   - **Syntax**: `(?|pattern1|pattern2)`.
+   - **Example**: `(?|(abc)|(def))` both `abc` and `def` are in Group 1.
+
+## Backreferences
+
+[⇧ Back to Table of Contents](#table-of-contents)
+
    - **Function**: Refers to the text matched by a previous capturing group.
    - **Syntax**: `\1`, `\2`, ..., `\n` (where `n` is the group number, being the placement of the group's first parenthesis). You can also backreference named capture groups with `\k<name>`.
    - **Example1**: `(\w+)\1` can match `abcabc` or `0101`, since `\1` is whatever `(\w+)` matches.
    - **Example2**: `(?<word>\w+)\k<word>` can match `abcabc` or `0101`, since `k<word>` is whatever `(?<word>\w+)` matches.
    - **Placement**: Given `((a)(b))`, `\1` refers to `((a)(b))`, `\2` refers to `(a)`, and `\3` refers to `(b)`.
 
-### Conditional Expressions
+## Conditional Expressions
+
+[⇧ Back to Table of Contents](#table-of-contents)
+
    - **Function**: Matches `true-regex` if `condition` is met; otherwise `false-regex`.
    - **Syntax**: `(?(condition)true-regex|false-regex)`.
 
-### Greedy, Lazy, and Possessive Quantifiers
+## Greedy, Lazy, and Possessive Quantifiers
+
+[⇧ Back to Table of Contents](#table-of-contents)
+
    - **Greedy**: `*`, `+`, `?` (matches as much as possible)
    - **Lazy**: `*?`, `+?`, `??` (matches as little as possible)
    - **Possessive**: `*+`, `++`, `?+` (like greedy, but without backtracking)
 
 **Possessive Example**: Given `\d++[a-zA-Z]` with string `12345abc`, it matches `12345a`. The `\d++` consumes all digits `12345`, and `[a-zA-Z]` matches the `a`.
 
-### Inline Modifiers and Flags
+## Flags
 
-#### Flags
+[⇧ Back to Table of Contents](#table-of-contents)
+
    - **Function**: Change the behavior of the whole regex.
    - **Syntax**: Using the global flag `g` is done by `/regex/g`.
 
@@ -150,9 +174,12 @@ Any uppercase predefined character set matches the negate of its lowercase. For 
 | Free-Spacing        | `x`    | Whitespace in the pattern (except in a character class) is ignored, and comments are allowed. | `/(?x) a b c # comment/` matches "abc". |
 
 
-#### Inline Modifiers
+## Inline Modifiers
+
+[⇧ Back to Table of Contents](#table-of-contents)
+
    - **Function**: Change the behavior of only part of the regex.
-   - **Syntax**: `(?flags)` for setting, `(?-flags)` for unsetting. 
+   - **Syntax**: `(?flags)` for setting, `(?-flags)` for unsetting.
    - **Example**: `(?i)case insensitive regex(?-i)case sensitive regex`.
 
 | Inline Modifier           | Syntax   | Description                                                        | Example                |
@@ -166,15 +193,25 @@ Any uppercase predefined character set matches the negate of its lowercase. For 
 
 **Notice**: Not all flags can be used as inline modifiers, and not all inline modifiers can be used as flags.
 
-### Subroutine Calls and Recursion
+## Subroutine Calls
+
+[⇧ Back to Table of Contents](#table-of-contents)
+
    - **Function**: Define a group and call it elsewhere in the regex.
    - **Syntax**: `(?(DEFINE)(?<name>pattern))` and `(?&name)`.
+
+## Recursion
+
+[⇧ Back to Table of Contents](#table-of-contents)
+
    - **Recursion**: For matching nested structures.
    - **Syntax**: `(?R)` for the entire pattern; `(?1)`, `(?2)`, etc., for specific groups.
 
 ---
 
 ## Useful Resources
+
+[⇧ Back to Table of Contents](#table-of-contents)
 
 - [Regex101](https://regex101.com/): Test and debug regex patterns.
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions): JavaScript regex reference.

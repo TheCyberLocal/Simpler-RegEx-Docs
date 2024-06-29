@@ -1,29 +1,40 @@
-# A Comprehensive Guide to Markdown Files
+# A Concise Guide to Markdown Files
+
+Markdown is a lightweight markup language designed for creating formatted text using a simple, easy-to-read syntax. It's particularly popular for writing documentation, README files, and other text that benefits from basic formatting and links.
+
+Markdown allows you to quickly format text with plain text syntax, which is then converted to HTML or other formats. This simplicity makes it ideal for creating clean, readable documentation without needing specialized tools.
+
+Markdown is widely used in software development, note-taking, and static site generators. It is supported by many platforms like GitHub, GitLab, and various content management systems, making it a versatile tool for both individual and collaborative projects.
+
+For those interested in learning more about Markdown, the [Markdown Guide](https://www.markdownguide.org/) is a comprehensive resource. It provides detailed documentation and examples, helping you understand how to use Markdown effectively for your documentation needs.
+
+## [⇦ Back to Documentation Index](../README.md#documentation-index)
 
 ## Table of Contents
 
-1. [Headers](#headers)
-2. [Anchors](#anchors)
-3. [Whitespaces](#whitespaces)
-4. [Text Styling](#text-styling)
-   1. [Bold Text](#bold-text)
-   2. [Italic Text](#italic-text)
-   3. [Strikethrough Text](#strikethrough-text)
-5. [Lists](#lists)
-   1. [Ordered Lists](#ordered-lists)
-   2. [Unordered Lists](#unordered-lists)
-   3. [Checklists](#checklists)
-6. [Special Text](#special-text)
-   1. [Blockquotes](#blockquotes)
-   2. [Inline Code Snippets](#inline-code-snippets)
-   3. [Multi-line Code Samples](#multi-line-code-samples)
-   4. [Embedding Backtick Strings](#embedding-backtick-strings)
-7. [Tables](#tables)
-8. [Section Dividers](#section-dividers)
-9. [Emojis](#emojis)
-10. [Links](#links)
-11. [Images and Gifs with Hover](#images-and-gifs-with-hover)
-12. [Linked Images](#linked-images)
+- [Headers](#headers)
+- [Whitespaces](#whitespaces)
+- [Text Styling](#text-styling)
+   - [Bold Text](#bold-text)
+   - [Italic Text](#italic-text)
+   - [Strikethrough Text](#strikethrough-text)
+- [Lists](#lists)
+   - [Ordered Lists](#ordered-lists)
+   - [Unordered Lists](#unordered-lists)
+   - [Checklists](#checklists)
+- [Special Text](#special-text)
+   - [Blockquotes](#blockquotes)
+   - [Inline Code Snippets](#inline-code-snippets)
+   - [Multi-line Code Samples](#multi-line-code-samples)
+   - [Embedding Backtick Strings](#embedding-backtick-strings)
+- [Tables](#tables)
+- [Section Dividers](#section-dividers)
+- [Emojis](#emojis)
+- [Anchors](#anchors)
+- [Links](#links)
+- [Images and Gifs with Hover](#images-and-gifs-with-hover)
+- [Linked Images](#linked-images)
+- [HTML Styling](#html-styling)
 
 ---
 
@@ -50,18 +61,6 @@
 **Syntax**: `###### Heading 6`.
 
 Headings 1 and 2 have thin section dividers while 3 through 6 don't.
-
-## Anchors
-
-[⇧ Back to Table of Contents](#table-of-contents)
-
-**Example**: The link directly above that takes you back to the table of contents.
-
-**Syntax**: `[display text](#lowercase-header-with-spaces-as-hyphens)`
-
-**Note:**: This works on any level heading (1-6).
-
----
 
 ## Whitespaces
 
@@ -241,6 +240,16 @@ The line below is a section divider.
 Emojis can be added by copy and pasting, or by using a colon code.
 **Syntax**: `:tada:`.
 
+## Anchors
+
+[⇧ Back to Table of Contents](#table-of-contents)
+
+**Example**: The link directly above that takes you back to the table of contents.
+
+**Syntax**: `[display text](#lowercase-header-with-spaces-as-hyphens)`
+
+**Note**: This works on any level heading (1-6) and can be used alongside a path (./my-file#my-header).
+
 ## Links
 
 [⇧ Back to Table of Contents](#table-of-contents)
@@ -253,7 +262,7 @@ Emojis can be added by copy and pasting, or by using a colon code.
 
 [⇧ Back to Table of Contents](#table-of-contents)
 
-**Example**: ![image](/asset.png "I can hover!")
+**Example**: ![image](/assets/hover-effects.png "I can hover!")
 
 **Syntax**: `![alt text](image link "hover text")`.
 
@@ -263,8 +272,22 @@ Note: The alt text and hover text are entirely optional. `![](image link)`
 
 [⇧ Back to Table of Contents](#table-of-contents)
 
-**Example**: [![image](/asset.png "I can hover!")](https://www.linkedin.com/in/tzm01/)
+**Example**: [![image](/assets/hover-effects.png "I can hover!")](https://www.linkedin.com/in/tzm01/)
 
 **Syntax**: `[![alt text](image link "hover text")](url link)`
 
-**Note:** We use the image syntax in the display text section of the link syntax.
+**Note**: We use the image syntax in the display text section of the link syntax.
+
+## HTML Styling
+
+[⇧ Back to Table of Contents](#table-of-contents)
+
+**Note**: These are just some common uses, but HTML styling has so much more.
+
+**Example**: my<sup>super</sup>text
+
+**Syntax**: `my<sup>super</sup>text`
+
+**Example**: my<sub>sub</sub>text
+
+**Syntax**: `my<sub>sub</sub>text`
