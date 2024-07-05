@@ -82,7 +82,7 @@ Regex patterns are a combination of characters and special symbols that define s
 | `\xhh`                      | Matches the character with the hexadecimal value `hh`.                    |
 | `\uhhhh`                    | Matches a Unicode character with the hexadecimal value `hhhh`.            |
 
-Any uppercase predefined character set matches the negate of its lowercase. For instance, \D matches any character that is not \d.
+Some uppercase predefined character set matches the negate of its lowercase. For instance, \D matches any character that is not \d.
 
 ### Custom Character Sets
 
