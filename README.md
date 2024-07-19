@@ -12,7 +12,7 @@ Simple Syntax Docs is meant to simplify the learning curve for fundamental codin
 
 ## 🌐 Socials
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/tzm01)
-
+[![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/TheCyberLocal)
 
 ## 💖 Support
 If you find my content helpful or interesting, consider buying me a coffee. Every cup is greatly appreciated and fuels my work!
