@@ -10,7 +10,7 @@ Whether you're a beginner or an experienced user, checkout [RegExr](https://rege
 
 ### [Too Much... or just want something better? Check out STRling!](https://github.com/TheCyberLocal/STRling)
 
-## [⇦ Back to Documentation Index](../README.md#documentation-index)
+## [⇦ Back to Project Overview](../README.md)
 
 ## Table of Contents
 
